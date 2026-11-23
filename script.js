@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll(".reveal");
   const revealOnScroll = () => {
     reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add("active");
+      if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add("active");
     });
   };
   window.addEventListener("scroll", revealOnScroll);
@@ -56,6 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("modal-role").innerText = btn.getAttribute("data-role");
         document.getElementById("modal-bio").innerText = btn.getAttribute("data-bio");
         document.getElementById("modal-quote").innerText = btn.getAttribute("data-quote");
+        const modalImg = document.getElementById("modal-img");
+        if (modalImg) {
+          const imgSrc = btn.getAttribute("data-img");
+          modalImg.src = imgSrc || "";
+          modalImg.style.display = imgSrc ? "block" : "none";
+        }
         modal.classList.add("open");
       });
     });
