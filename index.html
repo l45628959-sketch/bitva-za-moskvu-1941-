@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Битва за Москву (1941–1942) — Интерактивный цифровой музей</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-transition"><span>1941 • БИТВА ЗА МОСКВУ • 1942</span></div>
+
+  <header>
+    <a href="index.html" class="logo"><span class="logo-badge">85 ЛЕТ</span> ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ</a>
+    <nav>
+      <a href="index.html" class="active">Главная</a>
+      <a href="heroes.html">Герои и личности</a>
+      <a href="maps.html">Карта рубежей</a>
+      <a href="arsenal.html">Техника</a>
+      <a href="timeline.html">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">К 85-й годовщине контрнаступления советских войск</div>
+    <h1>Страницы народного подвига: <span>Битва за Москву</span></h1>
+    <p>Информационно-образовательный портал и интерактивный архив. Узнайте о полководцах, народном ополчении, рубежах обороны и технике, остановившей врага у стен столицы.</p>
+    <div class="btn-group">
+      <a href="heroes.html" class="btn btn-primary">Смотреть героев битвы →</a>
+      <a href="maps.html" class="btn btn-outline">Открыть карту обороны</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="stats-grid reveal">
+      <div class="stat-card"><span class="stat-number" data-target="203">203</span><div class="stat-label">дня и ночи длилось великое сражение</div></div>
+      <div class="stat-card"><span class="stat-number" data-target="1250000">1 250 000</span><div class="stat-label">советских воинов участвовали в обороне</div></div>
+      <div class="stat-card"><span class="stat-number" data-target="16">16</span><div class="stat-label">дивизий народного ополчения сформировала Москва</div></div>
+      <div class="stat-card"><span class="stat-number" data-target="11000">11 000</span><div class="stat-label">населённых пунктов освобождено зимой 1941–1942 гг.</div></div>
+    </div>
+
+    <section class="dispatch-box reveal">
+      <div class="dispatch-header">
+        <span class="dispatch-date" id="dispatch-date">16 НОЯБРЯ 1941 ГОДА • РАЗЪЕЗД ДУБОСЕКОВО</span>
+        <button class="btn btn-outline" id="next-dispatch-btn" style="padding: 8px 16px; font-size: 0.85rem;">Следующая сводка Информбюро ↻</button>
+      </div>
+      <p class="dispatch-text" id="dispatch-text"></p>
+    </section>
+
+    <h2 class="section-title reveal">Залы интерактивного музея</h2>
+    <p class="section-subtitle reveal">Выберите раздел, чтобы изучить документы, карты и биографии защитников</p>
+
+    <div class="cards-grid reveal">
+      <div class="card">
+        <div><h3>01. Герои и личности</h3><p>Интерактивные досье полководцев, бойцов дивизии Панфилова, лётчиков и партизан с фильтрами по ролям.</p></div>
+        <a href="heroes.html" class="btn btn-primary">Открыть досье →</a>
+      </div>
+      <div class="card">
+        <div><h3>02. Рубежи обороны</h3><p>Интерактивная схема Подмосковья, архивная карта боёв и сравнение «1941 год ↔ Наши дни».</p></div>
+        <a href="maps.html" class="btn btn-primary">Изучить карту →</a>
+      </div>
+      <div class="card">
+        <div><h3>03. Техника и оружие</h3><p>Сравнение легенд 1941 года: танк Т-34, гвардейский миномёт «Катюша», штурмовик Ил-2 и зенитки ПВО.</p></div>
+        <a href="arsenal.html" class="btn btn-primary">Смотреть арсенал →</a>
+      </div>
+      <div class="card">
+        <div><h3>04. Хронология и архив</h3><p>Лента событий от операции «Тайфун» до разгрома врага под Москвой и документы военного времени.</p></div>
+        <a href="timeline.html" class="btn btn-primary">Перейти в архив →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Творческий проект на конкурс <strong>«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Автор: <strong>Лизунова Екатерина Михайловна, группа 2ОИБАС-1925</strong> • Научный руководитель: <strong>Парфенова Анна Васильевна</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

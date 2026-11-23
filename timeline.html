@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хронология и архив — Битва за Москву</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .timeline-list { border-left: 3px solid var(--accent-red); padding-left: 28px; margin-left: 10px; margin-bottom: 50px; }
+    .timeline-item { position: relative; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 22px 26px; margin-bottom: 22px; transition: 0.3s; }
+    .timeline-item:hover { transform: translateX(6px); border-color: var(--accent-gold); }
+    .timeline-item::before { content: ""; position: absolute; left: -37px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent-gold); border: 3px solid var(--bg-dark); }
+    .timeline-item.hidden-item { display: none; }
+    .timeline-date { color: var(--accent-gold); font-weight: 800; font-size: 0.9rem; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+    .doc-card { background: #181b20; border: 1px dashed var(--accent-gold); border-radius: 10px; padding: 20px; cursor: pointer; transition: 0.3s; }
+    .doc-card:hover { background: #22262e; transform: translateY(-4px); }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition"><span>ХРОНОЛОГИЯ И ЦИФРОВОЙ АРХИВ</span></div>
+
+  <header>
+    <a href="index.html" class="logo"><span class="logo-badge">85 ЛЕТ</span> ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ</a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="heroes.html">Герои и личности</a>
+      <a href="maps.html">Карта рубежей</a>
+      <a href="arsenal.html">Техника</a>
+      <a href="timeline.html" class="active">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Хронология великой битвы</h1>
+    <p class="section-subtitle">Переключайте этапы сражения, чтобы проследить путь от обороны до разгрома врага</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterTimeline('all', this)">Все события</button>
+      <button class="filter-btn" onclick="filterTimeline('defense', this)">1. Оборона (сентябрь – декабрь 1941)</button>
+      <button class="filter-btn" onclick="filterTimeline('counter', this)">2. Контрнаступление (декабрь 1941 – апрель 1942)</button>
+    </div>
+
+    <div class="timeline-list">
+      <div class="timeline-item" data-stage="defense"><span class="timeline-date">30 СЕНТЯБРЯ – 2 ОКТЯБРЯ 1941 Г.</span><h3>Начало немецкой операции «Тайфун»</h3><p style="color: var(--text-muted);">Группа армий «Центр» начинает наступление на Москву. Советские войска в окружении под Вязьмой сковывают 28 вражеских дивизий на две недели.</p></div>
+      <div class="timeline-item" data-stage="defense"><span class="timeline-date">19 ОКТЯБРЯ 1941 Г.</span><h3>Введение осадного положения в Москве</h3><p style="color: var(--text-muted);">ГКО вводит осадное положение. Свыше 500 тысяч москвичей строят оборонительные рубежи на подступах к городу.</p></div>
+      <div class="timeline-item" data-stage="defense"><span class="timeline-date">7 НОЯБРЯ 1941 Г.</span><h3>Исторический парад на Красной площади</h3><p style="color: var(--text-muted);">Прямо с брусчатки Красной площади полки пехоты, артиллерии и танков уходят на передовую.</p></div>
+      <div class="timeline-item" data-stage="defense"><span class="timeline-date">16 – 29 НОЯБРЯ 1941 Г.</span><h3>Бои на ближних подступах</h3><p style="color: var(--text-muted);">Подвиг 28 панфиловцев у разъезда Дубосеково, оборона Крюково, Яхромы и Красной Поляны (Химки). Враг остановлен в 27 км от Кремля.</p></div>
+      <div class="timeline-item" data-stage="counter"><span class="timeline-date">5 – 6 ДЕКАБРЯ 1941 Г.</span><h3>Начало контрнаступления Красной Армии</h3><p style="color: var(--text-muted);">Советские фронты переходят в наступление и отбрасывают врага на 100–250 км от столицы.</p></div>
+      <div class="timeline-item" data-stage="counter"><span class="timeline-date">ДЕКАБРЬ 1941 – АПРЕЛЬ 1942 Г.</span><h3>Освобождение Подмосковья</h3><p style="color: var(--text-muted);">Освобождено более 11 000 населённых пунктов. Развеян миф о непобедимости вермахта.</p></div>
+    </div>
+
+    <h2 class="section-title">Цифровой архив документов</h2>
+    <p class="section-subtitle">Нажмите на документ, чтобы открыть его текст</p>
+
+    <div class="cards-grid" style="margin-bottom: 60px;">
+      <div class="doc-card open-modal-btn" data-name="Постановление ГКО № 813" data-role="АРХИВ • 19 ОКТЯБРЯ 1941 Г." data-bio="«Сим объявляется, что оборона столицы на рубежах в 100–120 км западнее Москвы поручена командующему Западным фронтом генералу армии т. Жукову. С 20 октября 1941 г. ввести в городе Москве осадное положение.»" data-quote="Председатель ГКО И. Сталин.">
+        <span class="hero-role">Документ № 1</span>
+        <h3 style="color: var(--accent-gold);">Постановление об осадном положении</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Открыть текст приказа →</p>
+      </div>
+      <div class="doc-card open-modal-btn" data-name="Письмо политрука В.Г. Клочкова" data-role="ФРОНТОВОЙ АРХИВ • 1941 Г." data-bio="«Дорогая моя Нина и дочурка Элечка! Сейчас стоим под самой Москвой. Враг рвётся к столице, но мы поклялись не пропустить его ни на шаг...»" data-quote="Фонды Центрального музея Вооружённых Сил РФ.">
+        <span class="hero-role">Документ № 2</span>
+        <h3 style="color: var(--accent-gold);">Письмо защитника Москвы семье</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Прочитать письмо с фронта →</p>
+      </div>
+      <div class="doc-card open-modal-btn" data-name="Источники и архивы" data-role="БИБЛИОГРАФИЯ ПРОЕКТА" data-bio="1. Портал Минобороны РФ «Память народа». 2. Музей Победы на Поклонной горе. 3. Центральный архив МО РФ (ЦАМО). 4. Г.К. Жуков «Воспоминания и размышления»." data-quote="Материалы проверены по документальным источникам.">
+        <span class="hero-role">Источники</span>
+        <h3 style="color: var(--accent-gold);">Архивы и литература</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Посмотреть список источников →</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="hero-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <span class="hero-role" id="modal-role">АРХИВ</span>
+      <h2 id="modal-name" style="font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 15px; color: var(--accent-gold);">Документ</h2>
+      <p id="modal-bio" style="color: var(--text-main); line-height: 1.7;"></p>
+      <div class="modal-quote" id="modal-quote">Примечание</div>
+    </div>
+  </div>
+
+  <div style="background: #0d0f12; border-top: 1px solid rgba(212,175,55,0.25); padding: 40px 5%; text-align: center; color: #9aa4b2; font-size: 0.85rem;">
+    <p>Творческий проект на конкурс <strong style="color:#f0f2f5;">«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Автор: <strong style="color:#f0f2f5;">Лизунова Екатерина Михайловна, группа 2ОИБАС-1925</strong> • Научный руководитель: <strong style="color:#f0f2f5;">Парфенова Анна Васильевна</strong></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

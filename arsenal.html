@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Техника и вооружение — Битва за Москву</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .arsenal-box { background: var(--bg-card); border: 1px solid var(--accent-gold); border-radius: 14px; padding: 35px; display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+    @media (max-width: 800px) { .arsenal-box { grid-template-columns: 1fr; } }
+    .spec-row { margin-bottom: 18px; }
+    .spec-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 6px; }
+    .spec-bar-bg { width: 100%; height: 10px; background: #121417; border-radius: 6px; overflow: hidden; }
+    .spec-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-red), var(--accent-gold)); width: 0%; transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+  </style>
+</head>
+<body>
+
+  <div class="page-transition"><span>АРСЕНАЛ ПОБЕДЫ • 1941</span></div>
+
+  <header>
+    <a href="index.html" class="logo"><span class="logo-badge">85 ЛЕТ</span> ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ</a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="heroes.html">Герои и личности</a>
+      <a href="maps.html">Карта рубежей</a>
+      <a href="arsenal.html" class="active">Техника</a>
+      <a href="timeline.html">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Техника и вооружение</h1>
+    <p class="section-subtitle">Нажимайте на кнопки ниже, чтобы сравнить легендарные боевые машины, защищавшие Москву</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="showTech('t34', this)">Средний танк Т-34</button>
+      <button class="filter-btn" onclick="showTech('katyusha', this)">БМ-13 «Катюша»</button>
+      <button class="filter-btn" onclick="showTech('il2', this)">Штурмовик Ил-2</button>
+      <button class="filter-btn" onclick="showTech('pvo', this)">Зенитки и аэростаты ПВО</button>
+    </div>
+
+    <div class="arsenal-box">
+      <div>
+        <span class="hero-role" id="tech-type">БРОНЕТАНКОВЫЕ ВОЙСКА</span>
+        <h2 id="tech-name" style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent-gold); margin-bottom: 12px;">Средний танк Т-34-76</h2>
+        <p id="tech-desc" style="color: var(--text-main); line-height: 1.7; margin-bottom: 20px;">Главный танк Красной Армии в Битве за Москву. Наклонная броня, широкие гусеницы для глубокого снега и мощная 76-мм пушка делали Т-34 неуязвимым для большинства немецких противотанковых орудий осенью-зимой 1941 года.</p>
+        <div class="modal-quote" id="tech-fact">Танкисты 4-й танковой бригады Михаила Катукова под Мценском и Волоколамском громили колонны Гудериана, используя тактику танковых засад.</div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom: 20px; color: var(--text-muted); font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">Боевые показатели</h3>
+        <div class="spec-row"><div class="spec-label"><span>Огневая мощь</span><span id="val-fire">85%</span></div><div class="spec-bar-bg"><div class="spec-bar-fill" id="bar-fire" style="width: 85%;"></div></div></div>
+        <div class="spec-row"><div class="spec-label"><span>Бронезащита</span><span id="val-armor">90%</span></div><div class="spec-bar-bg"><div class="spec-bar-fill" id="bar-armor" style="width: 90%;"></div></div></div>
+        <div class="spec-row"><div class="spec-label"><span>Скорость и проходимость</span><span id="val-speed">80%</span></div><div class="spec-bar-bg"><div class="spec-bar-fill" id="bar-speed" style="width: 80%;"></div></div></div>
+        <div class="spec-row"><div class="spec-label"><span>Вклад в разгром врага</span><span id="val-impact">95%</span></div><div class="spec-bar-bg"><div class="spec-bar-fill" id="bar-impact" style="width: 95%;"></div></div></div>
+      </div>
+    </div>
+  </main>
+
+  <div style="background: #0d0f12; border-top: 1px solid rgba(212,175,55,0.25); padding: 40px 5%; text-align: center; color: #9aa4b2; font-size: 0.85rem;">
+    <p>Творческий проект на конкурс <strong style="color:#f0f2f5;">«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Автор: <strong style="color:#f0f2f5;">Лизунова Екатерина Михайловна, группа 2ОИБАС-1925</strong> • Научный руководитель: <strong style="color:#f0f2f5;">Парфенова Анна Васильевна</strong></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const techData = {
+      t34: { type: "БРОНЕТАНКОВЫЕ ВОЙСКА", name: "Средний танк Т-34-76", desc: "Главный танк Красной Армии в Битве за Москву. Наклонная броня, широкие гусеницы для глубокого снега и мощная 76-мм пушка делали Т-34 неуязвимым для большинства немецких орудий.", fact: "Танкисты 4-й танковой бригады Михаила Катукова под Мценском и Волоколамском громили колонны Гудериана, используя тактику танковых засад.", fire: 85, armor: 90, speed: 80, impact: 95 },
+      katyusha: { type: "РЕАКТИВНАЯ АРТИЛЛЕРИЯ", name: "Боевая машина БМ-13 «Катюша»", desc: "Реактивный миномёт, способный за 7–10 секунд выпустить 16 снарядов на расстояние до 8,5 км. Огненный залп накрывал огромную площадь, вызывая панику в рядах противника.", fact: "К началу контрнаступления под Москвой в составе фронтов действовало уже более 40 дивизионов «Катюш».", fire: 98, armor: 30, speed: 75, impact: 92 },
+      il2: { type: "ШТУРМОВАЯ АВИАЦИЯ", name: "Штурмовик Ил-2 («Летающий танк»)", desc: "Бронированный одномоторный самолёт-штурмовик, созданный С.В. Ильюшиным. Уничтожал танковые колонны, переправы и живую силу врага с бреющего полёта.", fact: "Немецкие солдаты прозвали Ил-2 «Чёрной смертью» за его живучесть и сокрушительную мощь.", fire: 90, armor: 82, speed: 78, impact: 90 },
+      pvo: { type: "ПРОТИВОВОЗДУШНАЯ ОБОРОНА МОСКВЫ", name: "85-мм зенитные пушки и аэростаты", desc: "Для защиты неба столицы были развёрнуты тысячи зенитных орудий, прожекторных установок и аэростатов заграждения.", fact: "Из более чем 7000 немецких самолётов, пытавшихся прорваться к Москве, к городу прорвались лишь единицы.", fire: 88, armor: 40, speed: 60, impact: 94 }
+    };
+    function showTech(key, btn) {
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const item = techData[key];
+      document.getElementById("tech-type").innerText = item.type;
+      document.getElementById("tech-name").innerText = item.name;
+      document.getElementById("tech-desc").innerText = item.desc;
+      document.getElementById("tech-fact").innerText = item.fact;
+      document.getElementById("val-fire").innerText = item.fire + "%"; document.getElementById("bar-fire").style.width = item.fire + "%";
+      document.getElementById("val-armor").innerText = item.armor + "%"; document.getElementById("bar-armor").style.width = item.armor + "%";
+      document.getElementById("val-speed").innerText = item.speed + "%"; document.getElementById("bar-speed").style.width = item.speed + "%";
+      document.getElementById("val-impact").innerText = item.impact + "%"; document.getElementById("bar-impact").style.width = item.impact + "%";
+    }
+  </script>
+</body>
+</html>

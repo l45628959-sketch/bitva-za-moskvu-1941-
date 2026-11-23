@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Герои и личности — Битва за Москву</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="page-transition"><span>ЗАЛ СЛАВЫ И ГЕРОЕВ</span></div>
+
+  <header>
+    <a href="index.html" class="logo"><span class="logo-badge">85 ЛЕТ</span> ЦИФРОВОЙ МУЗЕЙ ПОБЕДЫ</a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="heroes.html" class="active">Герои и личности</a>
+      <a href="maps.html">Карта рубежей</a>
+      <a href="arsenal.html">Техника</a>
+      <a href="timeline.html">Хронология и архив</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="section-title">Герои Московской битвы</h1>
+    <p class="section-subtitle">Нажимайте на фильтры по ролям и открывайте личные дела защитников столицы</p>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterHeroes('all', this)">Все личности (6)</button>
+      <button class="filter-btn" onclick="filterHeroes('commander', this)">Полководцы</button>
+      <button class="filter-btn" onclick="filterHeroes('hero', this)">Герои передовой</button>
+      <button class="filter-btn" onclick="filterHeroes('partisan', this)">Партизаны и разведка</button>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="card hero-card" data-category="commander">
+        <div>
+          <img src="zhukov.jpg" alt="Г.К. Жуков" class="card-photo">
+          <span class="hero-role">Полководец • Западный фронт</span>
+          <h3>Георгий Константинович Жуков</h3>
+          <div class="hero-years">1896 – 1974 • Генерал армии, Маршал Победы</div>
+          <p>Возглавил оборону Москвы в октябре 1941 года и организовал декабрьское контрнаступление.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Георгий Константинович Жуков (1896–1974)"
+          data-role="Командующий Западным фронтом • Четырежды Герой Советского Союза"
+          data-bio="10 октября 1941 года принял командование Западным фронтом. В жёсткие сроки восстановил управление войсками на Можайской линии обороны, а 5–6 декабря 1941 года нанёс контрудар, отбросив группу армий «Центр» на 100–250 км от столицы."
+          data-quote="«Когда меня спрашивают, что больше всего запомнилось из минувшей войны, я всегда отвечаю: битва за Москву.»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+      <div class="card hero-card" data-category="commander">
+        <div>
+          <img src="rokossovsky.jpg" alt="К.К. Рокоссовский" class="card-photo">
+          <span class="hero-role">Полководец • 16-я армия</span>
+          <h3>Константин Константинович Рокоссовский</h3>
+          <div class="hero-years">1896 – 1968 • Генерал-лейтенант</div>
+          <p>Командовал 16-й армией на главном направлении удара немецких танков — вдоль Волоколамского шоссе и у Истры.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Константин Константинович Рокоссовский (1896–1968)"
+          data-role="Командующий 16-й армией • Дважды Герой Советского Союза"
+          data-bio="Войска 16-й армии (дивизия Панфилова, бригада Катукова, конники Доватора) сдержали главный танковый удар вермахта на Волоколамском направлении и у станции Крюково."
+          data-quote="«Воевать нужно не числом, а умением, беречь каждого солдата и знать характер противника.»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+      <div class="card hero-card" data-category="commander">
+        <div>
+          <img src="panfilov.jpg" alt="И.В. Панфилов" class="card-photo">
+          <span class="hero-role">Комдив • 316-я стрелковая дивизия</span>
+          <h3>Иван Васильевич Панфилов</h3>
+          <div class="hero-years">1893 – 1941 • Генерал-майор</div>
+          <p>Создатель легендарной Панфиловской дивизии, разработавший тактику эшелонированной противотанковой обороны.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Иван Васильевич Панфилов (1893–1941)"
+          data-role="Командир 316-й (8-й гвардейской) дивизии • Герой Советского Союза"
+          data-bio="В октябре–ноябре 1941 года под Волоколамском его дивизия на фронте шириной свыше 40 км сдерживала две танковые и две пехотные дивизии врага. Погиб 18 ноября 1941 года у деревни Гусенёво."
+          data-quote="«Не торопись умирать — учись воевать! Солдат должен жить, чтобы бить врага.»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+      <div class="card hero-card" data-category="hero">
+        <div>
+          <img src="klochkov.jpg" alt="В.Г. Клочков" class="card-photo">
+          <span class="hero-role">Герой передовой • Разъезд Дубосеково</span>
+          <h3>Василий Георгиевич Клочков</h3>
+          <div class="hero-years">1911 – 1941 • Политрук роты</div>
+          <p>Возглавил группу истребителей танков в легендарном бою у разъезда Дубосеково 16 ноября 1941 года.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Василий Георгиевич Клочков (1911–1941)"
+          data-role="Политрук 4-й роты 1075-го стрелкового полка • Герой Советского Союза"
+          data-bio="16 ноября 1941 года группа истребителей танков под руководством Клочкова четыре часа удерживала позицию у разъезда Дубосеково, уничтожив 18 немецких танков. Погиб, бросившись со связкой гранат под вражеский танк."
+          data-quote="«Велика Россия, а отступать некуда — позади Москва!»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+      <div class="card hero-card" data-category="hero">
+        <div>
+          <img src="talalikhin.jpg" alt="В.В. Талалихин" class="card-photo">
+          <span class="hero-role">Авиация ПВО • Ночной таран</span>
+          <h3>Виктор Васильевич Талалихин</h3>
+          <div class="hero-years">1918 – 1941 • Младший лейтенант</div>
+          <p>Одним из первых в мире совершил ночной воздушный таран в небе над Подмосковьем, защищая столицу.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Виктор Васильевич Талалихин (1918–1941)"
+          data-role="Лётчик 177-го истребительного авиаполка ПВО • Герой Советского Союза"
+          data-bio="В ночь на 7 августа 1941 года под Подольском на истребителе И-16 таранил немецкий бомбардировщик He-111, летевший бомбить Москву, и спасся на парашюте. Погиб в воздушном бою 27 октября 1941 года."
+          data-quote="«Если я погибну, то один, а если враг долетит до Москвы — погибнут десятки мирных жителей.»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+      <div class="card hero-card" data-category="partisan">
+        <div>
+          <img src="zoya.jpg" alt="Зоя Космодемьянская" class="card-photo">
+          <span class="hero-role">Разведка и партизаны • Петрищево</span>
+          <h3>Зоя Анатольевна Космодемьянская</h3>
+          <div class="hero-years">1923 – 1941 • Боец диверсионной части</div>
+          <p>18-летняя московская школьница, ушедшая добровольцем в тыл врага и ставшая символом несгибаемой стойкости.</p>
+        </div>
+        <button class="btn btn-primary open-modal-btn"
+          data-name="Зоя Анатольевна Космодемьянская (1923–1941)"
+          data-role="Боец в/ч 9903 • Первая женщина — Герой Советского Союза в годы ВОВ"
+          data-bio="В ноябре 1941 года выполняла боевое задание в деревне Петрищево (Рузский район). Схвачена фашистами при поджоге узла связи противника. После жестоких пыток казнена 29 ноября 1941 года, не выдав товарищей."
+          data-quote="«Мне не страшно умирать, товарищи! Это счастье — умереть за свой народ!»">
+          Открыть личное дело →
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="hero-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <span class="hero-role" id="modal-role">ДОЛЖНОСТЬ</span>
+      <h2 id="modal-name" style="font-family: 'Playfair Display', serif; font-size: 1.7rem; margin-bottom: 15px; color: var(--accent-gold);">Имя Героя</h2>
+      <p id="modal-bio" style="color: var(--text-main); line-height: 1.7;"></p>
+      <div class="modal-quote" id="modal-quote">Цитата</div>
+    </div>
+  </div>
+
+  <div style="background: #0d0f12; border-top: 1px solid rgba(212,175,55,0.25); padding: 40px 5%; text-align: center; color: #9aa4b2; font-size: 0.85rem;">
+    <p>Творческий проект на конкурс <strong style="color:#f0f2f5;">«Страницы народного подвига. Битва за Москву»</strong> (КИПФИН, ПЦК ОГСЭД)</p>
+    <p style="margin-top: 8px;">Автор: <strong style="color:#f0f2f5;">Лизунова Екатерина Михайловна, группа 2ОИБАС-1925</strong> • Научный руководитель: <strong style="color:#f0f2f5;">Парфенова Анна Васильевна</strong></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
